@@ -24,7 +24,7 @@
             ],
             "styles": [
               "src/custom-theme.scss",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -133,5 +133,10 @@
       }
     }
   },
-  "defaultProject": "weapon-system"
+  "defaultProject": "weapon-system",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
