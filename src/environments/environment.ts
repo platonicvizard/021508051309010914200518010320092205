@@ -3,7 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'http://67.205.147.92:8080/api/v1/',
+  weapons: {
+    basePath: 'weapons',
+    singlePath: '/weapons/{uuid}'
+  },
+  ammunition: {
+    basePath: 'ammunition',
+    singlePath: '/ammunition/{uuid}'
+  },
+  attachments: {
+    basePath: 'attachments',
+    singlePath: '/attachments/{uuid}'
+  }
 };
 
 /*
