@@ -1,0 +1,28 @@
+<div *ngIf="weapons">
+  <h3 class="center">Select a Weapon to Customize</h3>
+
+  <div *ngFor="let weapon of weapons | async">
+    <mat-card class="weapon-card">
+      <mat-card-header class="center">
+        <mat-card-title> {{ weapon.name }}</mat-card-title>
+        <mat-card-subtitle>Rifle</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <img
+          mat-card-image
+          class="center"
+          [src]="weapon.image"
+          alt="Photo {{ weapon.name }}"
+        />
+      </mat-card-content>
+
+      <mat-card-actions class="center">
+        <button mat-button>
+          Customize
+          <mat-icon aria-label="edit-icon">edit</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

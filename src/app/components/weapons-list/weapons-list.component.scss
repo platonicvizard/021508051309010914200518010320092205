@@ -1,0 +1,17 @@
+.center {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.weapon-card {
+  margin: 10px;
+  padding-right: 49px;
+}
+
+mat-card img {
+  object-fit: cover;
+  width: 40%;
+}
