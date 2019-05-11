@@ -1,16 +1,5 @@
-.center {
-  display: flex;
-  justify-content: center;
-  &-vertical {
-    flex-direction: column;
-  }
-  &-horizontal {
-    flex-direction: row;
-  }
-}
-
 .container {
   &-content {
-
+    background-color: #424242;
   }
 }

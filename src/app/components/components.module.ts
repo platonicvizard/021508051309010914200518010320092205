@@ -12,6 +12,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ItemSelectorComponent } from './item-selector/item-selector.component';
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   declarations: [
     WeaponOptionComponent,
@@ -30,7 +32,8 @@ import { ItemSelectorComponent } from './item-selector/item-selector.component';
     MatGridListModule,
     MatIconModule,
     MatDialogModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    SharedModule
   ]
 })
 export class ComponentsModule {}

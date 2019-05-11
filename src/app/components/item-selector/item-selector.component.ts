@@ -7,8 +7,8 @@ import { IWeaponBaseItem } from 'src/app/models/i-weapon-base-item';
   styleUrls: ['./item-selector.component.scss']
 })
 export class ItemSelectorComponent implements OnInit {
-  @Input()
-  items: IWeaponBaseItem[];
+  @Input() items: IWeaponBaseItem[];
+  @Input() height: number | string = '100%';
 
   currentItem: IWeaponBaseItem = null;
   currentIndex = 0;
@@ -24,6 +24,9 @@ export class ItemSelectorComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (typeof this.height === 'number') {
+      this.height = `${this.height}px`;
+    }
     this.update();
   }
 

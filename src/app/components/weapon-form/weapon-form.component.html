@@ -1,25 +1,26 @@
 <form>
   <app-item-selector [items]="weapons | async"></app-item-selector>
+  <h6 class="center center-horizontal">Rifle</h6>
+
+  <div class="center center-horizontal">
+    <div>
+      <app-item-selector
+        [items]="ammunition | async"
+        [height]="40"
+      ></app-item-selector>
+      <h6 class="center center-horizontal">Ammunition</h6>
+    </div>
+
+    <div>
+      <app-item-selector
+        [items]="attachments | async"
+        [height]="40"
+      ></app-item-selector>
+      <h6 class="center center-horizontal">Attachment</h6>
+    </div>
+  </div>
+
   <button mat-button [mat-dialog-close]="weaponData" cdkFocusInitial>
     Ok
   </button>
 </form>
-<!-- <mat-card class="example-card">
-  <form>
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image">
-        <mat-form-field>
-          <input matInput value="Disco party!" placeholder="Message" #message />
-        </mat-form-field>
-      </div>
-      <mat-card-title>{{ data.name }}</mat-card-title>
-      <mat-card-subtitle>Rifle</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="data.image" alt="Photo {{ data.name }}" />
-    <mat-card-actions class="center">
-      <button mat-button [mat-dialog-close]="weaponData" cdkFocusInitial>
-        Ok
-      </button>
-    </mat-card-actions>
-  </form>
-</mat-card> -->

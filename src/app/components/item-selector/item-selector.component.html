@@ -17,7 +17,11 @@
       </button>
     </div>
 
-    <img [src]="currentItem.image" alt="Image {{ currentItem.name }}" />
+    <img
+      [src]="currentItem.image | sanitizeUrl"
+      alt="Image {{ currentItem.name }}"
+      [ngStyle]="{ 'height': height }"
+    />
 
     <div class="center center-vertical">
       <button [disabled]="!showNext" mat-icon-button (click)="next($event)">
