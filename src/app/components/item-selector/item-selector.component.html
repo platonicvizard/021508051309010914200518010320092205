@@ -1,0 +1,30 @@
+<div
+  *ngIf="currentItem"
+  class="container"
+  [style.background-image]="currentItem.image"
+>
+  <h6 class="center center-horizontal">
+    {{ currentItem.name }}
+  </h6>
+  <div class="container-content center center-horizontal">
+    <div class="center center-vertical">
+      <button
+        [disabled]="!showPrevious"
+        mat-icon-button
+        (click)="previews($event)"
+      >
+        <mat-icon aria-label="left icon" [inline]="true">chevron_left</mat-icon>
+      </button>
+    </div>
+
+    <img [src]="currentItem.image" alt="Image {{ currentItem.name }}" />
+
+    <div class="center center-vertical">
+      <button [disabled]="!showNext" mat-icon-button (click)="next($event)">
+        <mat-icon aria-label="right icon" [inline]="true"
+          >chevron_right</mat-icon
+        >
+      </button>
+    </div>
+  </div>
+</div>
