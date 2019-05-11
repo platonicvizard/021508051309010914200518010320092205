@@ -9,14 +9,18 @@ import { WeaponsListComponent } from './weapons-list/weapons-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ItemSelectorComponent } from './item-selector/item-selector.component';
 @NgModule({
   declarations: [
     WeaponOptionComponent,
     WeaponFormComponent,
     WeaponSelectionComponent,
-    WeaponsListComponent
+    WeaponsListComponent,
+    ItemSelectorComponent
   ],
+  entryComponents: [WeaponFormComponent],
   exports: [WeaponsListComponent],
   imports: [
     CommonModule,
@@ -24,7 +28,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     HttpClientModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule
   ]
 })
 export class ComponentsModule {}

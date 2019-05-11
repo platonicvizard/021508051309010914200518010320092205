@@ -6,6 +6,8 @@ import { IWeapon } from 'src/app/models/i-weapon';
 import { Store } from '@ngrx/store';
 import { WeaponAppState } from 'src/app/reducers';
 import { AddWeapons } from 'src/app/actions/weapon.action';
+import { MatDialog } from '@angular/material/dialog';
+import { WeaponFormComponent } from '../weapon-form/weapon-form.component';
 
 @Component({
   selector: 'app-weapons-list',
@@ -17,9 +19,21 @@ export class WeaponsListComponent implements OnInit {
 
   constructor(
     private weaponService: WeaponService,
-    private store: Store<WeaponAppState>
+    private store: Store<WeaponAppState>,
+    public dialog: MatDialog
   ) {
     this.weapons = store.select('weapons');
+  }
+
+  openDialog(selectedWeapon: IWeapon): void {
+    const dialogRef = this.dialog.open(WeaponFormComponent, {
+      data: selectedWeapon
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+
+    });
   }
 
   ngOnInit() {
