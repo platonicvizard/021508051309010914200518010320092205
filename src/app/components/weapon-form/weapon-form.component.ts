@@ -24,6 +24,8 @@ export class WeaponFormComponent implements OnInit {
     private store: Store<WeaponAppState>
   ) {
     this.weapons = store.select('weapons');
+    this.ammunition = store.select('ammunition');
+    this.attachments = store.select('attachments');
   }
 
   onNoClick(): void {
