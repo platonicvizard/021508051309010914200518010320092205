@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IWeapon } from 'src/app/models/i-weapon';
 import { Observable } from 'rxjs';
@@ -18,6 +18,9 @@ export class WeaponFormComponent implements OnInit {
   attachments: Observable<IAttachment[]>;
   weaponData: IWeapon = null;
 
+  @Output()
+  actionClicked: EventEmitter<IWeapon> = new EventEmitter<IWeapon>();
+
   constructor(
     public dialogRef: MatDialogRef<WeaponFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: IWeapon,
@@ -30,6 +33,7 @@ export class WeaponFormComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+    this.actionClicked.emit(this.weaponData);
   }
 
   ngOnInit() {}
